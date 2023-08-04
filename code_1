@@ -1,0 +1,23 @@
+Create table Book ( Book_id int primary key, title varchar(50), pub_name varchar(50), Pub_year year);
+Create table Book_Authors (Book_id int, Author_Name varchar(50), foreign key (Book_id) references Book(Book_id) on delete cascade);
+Insert into Book ( Book_id, title, pub_name, Pub_year)
+Values( 1000, ‘DBMS’, ‘Pearson’, 2017),
+(1001, ‘Fundamentals of DB’, ‘Penguin’, 1997),
+(1002, ‘Harry Potter’, ‘Book Hound’, 2017);
+Book_Authors:
+Insert into Book_Authors(Book_id, Author_Name)
+Values(1000, ‘B Navathe’),
+(1001, ‘B Navathe’),
+(1002, ‘JK Rowling’);
+select title
+from Book
+where Pub_year = 2017;
+
+delete
+from book
+where title = ‘Harry Potter’;
+
+Insert into Book_Authors(Book_id, Author_Name),
+values(1003, ‘Galvin’);
+Insert into Book_Authors(Book_id, Author_Name),
+values(1004, ‘Galvin’);
